@@ -1,1 +1,9 @@
-alias  tmux='/usr/bin/tmux attach || /usr/bin/tmux new'
+# Add the following line to .profile or .bashrc
+# . $HOME/.init_shell
+
+alias tmux='/usr/bin/tmux attach || /usr/bin/tmux new'
+
+# Enable ls color mode.
+if [ "$(uname)" == "Darwin" ]; then
+	alias ls='ls -G'
+fi
