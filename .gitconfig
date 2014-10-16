@@ -1,5 +1,11 @@
-[user]                                                                          
-    name = Yeonjun Lim                                                          
-    email = yjroot@gmail.com                                                    
-[core]                                                                          
-    editor = vim  
+[user]
+    name = Yeonjun Lim
+    email = yjroot@gmail.com
+[core]
+    editor = vim
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	lo = log --graph
