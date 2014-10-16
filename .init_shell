@@ -1,6 +1,8 @@
 ###############################################################################
 # YJROOT's Shell initialization scripts.
 ###############################################################################
+# Add the following line to .profile or .bashrc
+# . $HOME/.init_shell
 
 # Disable Ctrl-S(XOFF)
 stty -ixon
@@ -18,3 +20,8 @@ function _update_ps1() {
     fi
 }
 export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+
+# Enable ls color mode for OSX.
+if [ "$(uname)" == "Darwin" ]; then
+	alias ls='ls -G'
+fi
