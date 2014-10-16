@@ -9,3 +9,5 @@
 	ci = commit
 	st = status
 	lo = log --graph
+[push]
+	default = simple
