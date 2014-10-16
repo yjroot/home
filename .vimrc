@@ -8,6 +8,9 @@ set shiftwidth=4
 set expandtab
 
 set number
+set colorcolumn=80
+
+set clipboard=unnamedplus
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundle
@@ -26,7 +29,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 Plugin 'klen/python-mode'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,3 +53,11 @@ set laststatus=2
 set encoding=utf-8
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python-mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pymode_doc = 0
+" Pymode has some bug?
+let g:pymode_rope = 0
