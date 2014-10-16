@@ -1,1 +1,20 @@
-alias  tmux='/usr/bin/tmux attach || /usr/bin/tmux new'
+###############################################################################
+# YJROOT's Shell initialization scripts.
+###############################################################################
+
+# Disable Ctrl-S(XOFF)
+stty -ixon
+
+# Using just one session of tmux, and 256 color setting.
+alias tmux='TERM=xterm-256color /usr/bin/tmux attach || TERM=xterm-256color /usr/bin/tmux new'
+
+# Update prompt string.
+function _update_ps1() {
+    local git_branch=$(git describe --contains --all HEAD 2>/dev/null)
+    if [ $git_branch ]; then
+        PS1="\[\e[38;5;250m\]\[\e[48;5;240m\]\h\[\e[48;5;166m\]\[\e[38;5;240m\]\[\e[38;5;254m\]\[\e[48;5;166m\]\u\[\e[48;5;31m\]\[\e[38;5;166m\]\[\e[38;5;15m\]\[\e[48;5;31m\]\W\[\e[48;5;161m\]\[\e[38;5;31m\]\[\e[38;5;15m\]\[\e[48;5;161m\]  $git_branch\[\e[48;5;236m\]\[\e[38;5;161m\]\[\e[38;5;15m\]\[\e[48;5;236m\]\$\[\e[0m\]\[\e[38;5;236m\]\[\e[0m\]"
+    else
+        PS1='\[\e[38;5;250m\]\[\e[48;5;240m\]\h\[\e[48;5;166m\]\[\e[38;5;240m\]\[\e[38;5;254m\]\[\e[48;5;166m\]\u\[\e[48;5;31m\]\[\e[38;5;166m\]\[\e[38;5;15m\]\[\e[48;5;31m\]\W\[\e[48;5;236m\]\[\e[38;5;31m\]\[\e[38;5;15m\]\[\e[48;5;236m\]\$\[\e[0m\]\[\e[38;5;236m\]\[\e[0m\]'
+    fi
+}
+export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
