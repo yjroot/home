@@ -31,3 +31,10 @@ export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 if [ "$(uname)" == "Darwin" ]; then
 	alias ls='ls -G'
 fi
+
+# Load docker.
+if [ $(which boot2docker) ]; then
+	boot2docker init
+	boot2docker start
+	$(boot2docker shellinit)
+fi
