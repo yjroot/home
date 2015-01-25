@@ -32,15 +32,10 @@ if [ "$(uname)" == "Darwin" ]; then
 	alias ls='ls -G'
 fi
 
-# Load docker.
-if [ $(which boot2docker) ]; then
-	boot2docker init
-	boot2docker start
-	$(boot2docker shellinit)
-fi
-
+# Command for urlencode.
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(\" \".join(sys.argv[1:]))"'
 
+# Google search.
 google() {
     if [ "$(uname)" == "Darwin" ]; then
         open "https://google.com/search?q=$(urlencode $@)"
