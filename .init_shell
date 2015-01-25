@@ -41,3 +41,17 @@ google() {
         open "https://google.com/search?q=$(urlencode $@)"
     fi
 }
+
+_google() {
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    echo $cur >> /tmp/log
+
+    opts="$(python $HOME/.scripts/google_completion.py $cur)"
+    IFS=$'\n' read -rd '' -a COMPREPLY <<<"$opts"
+    return 0
+}
+complete -F _google google
+
