@@ -1,7 +1,27 @@
-set hlsearch
+" Color
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set bg=dark
 
+
+" Highlight search
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch
+"nnoremap <esc> :let @/ = ""<CR>
+
+
+" Command tab completion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildmode=longest,list,full
+"set wildmenu
+
+
+" Ctags
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tags +=./tags,../tags,../../tags,../../../tags,/usr/src/linux/tags,/usr/include/tags
 
+
+" Editor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -12,7 +32,11 @@ set colorcolumn=80
 
 syntax on
 
+" Clipboard
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set clipboard=unnamedplus
+
+
 " Bundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -46,7 +70,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Powerline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set laststatus=2
@@ -55,7 +79,6 @@ set t_Co=256
 let g:Powerline_symbols = 'fancy'
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python-mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pymode_doc = 0
