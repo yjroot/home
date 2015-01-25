@@ -38,3 +38,11 @@ if [ $(which boot2docker) ]; then
 	boot2docker start
 	$(boot2docker shellinit)
 fi
+
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(\" \".join(sys.argv[1:]))"'
+
+google() {
+    if [ "$(uname)" == "Darwin" ]; then
+        open "https://google.com/search?q=$(urlencode $@)"
+    fi
+}
