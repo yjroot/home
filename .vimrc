@@ -10,7 +10,7 @@ set expandtab
 set number
 set colorcolumn=80
 
-set clipboard=unnamedplus
+syntax on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundle
@@ -61,3 +61,4 @@ let g:Powerline_symbols = 'fancy'
 let g:pymode_doc = 0
 " Pymode has some bug?
 let g:pymode_rope = 0
+let g:pymode_folding = 0
