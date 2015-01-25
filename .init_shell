@@ -8,7 +8,7 @@
 stty -ixon
 
 # Using just one session of tmux, and 256 color setting.
-alias tmux='TERM=xterm-256color /usr/bin/tmux attach || TERM=xterm-256color /usr/bin/tmux new'
+alias tmux='TERM=xterm-256color tmux attach || TERM=xterm-256color tmux new'
 
 # Update prompt string.
 function _update_ps1() {
